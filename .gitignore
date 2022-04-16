@@ -1,6 +1,8 @@
 .idea
 .vscode
 db.sqlite3
+postgres
+req.txt
 
 # Python
 __pycache__/
