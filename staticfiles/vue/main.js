@@ -3,7 +3,8 @@ var app = new Vue({
   delimiters: ['[[', ']]'],
   data: {
     results: [],
-    categories: []
+    categories: [],
+    last_param: ''
   },
   mounted: function () {
         this.allItems();
@@ -15,6 +16,7 @@ var app = new Vue({
             console.log('salam')
             console.log(response.data['data'])
             this.results = response.data['data']
+            this.last_param = ''
         },
 
         getCategories: async function () {
@@ -27,18 +29,18 @@ var app = new Vue({
         filter: async function (id) {
             let response = await axi.get('items/?subcategory=' + id.toString())
             this.results = response.data['data']
+            this.last_param = '?subcategory=' + id.toString();
         },
 
         order: async function (ordering_type) {
-            let par = window.location.search;
             let sign = '';
-            if (par.len > 0) {
+            if (this.last_param.length) {
                 sign = '&';
             } else {
                 sign = '?';
             }
 
-            let response = await axi.get('items/' + window.location.search + sign + 'ordering=' + ordering_type)
+            let response = await axi.get('items/' + this.last_param + sign + 'ordering=' + ordering_type)
             this.results = response.data['data']
         },
     }
