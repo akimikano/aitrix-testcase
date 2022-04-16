@@ -26,14 +26,14 @@
         <main class="l-main" id="app">
             <header class="l-header" id="header">
             <nav class="nav bd-container">
-                <a href="#" class="nav__logo">akimzhan x aitrix</a>
+                <a href="#" @click="allItems()" class="nav__logo">akimzhan x aitrix</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <div v-for="category in categories" class="dropdown">
                             <li class="nav__item"><a href="#" class="nav__link">[[ category.name ]]</a></li>
                             <div class="dropdown-content">
-                              <a v-for="sub in category.subcategories" href="#">[[ sub.name ]]</a>
+                              <a v-for="sub in category.subcategories" @click="filter(sub.id)" href="#">[[ sub.name ]]</a>
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@
 
                 <div class="menu__container bd-grid">
                     <div class="menu__content" v-for="item in results">
-                        <img src="assets/img/plate1.png" alt="" class="menu__img">
+<!--                        <img src="assets/img/plate1.png" alt="" class="menu__img">-->
                         <h3 class="menu__name">[[ item.name ]]</h3>
                         <span class="menu__detail">[[ item.subcategory_name ]]</span>
                         <span class="menu__preci">[[ item.price ]] som</span>

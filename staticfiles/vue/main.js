@@ -13,8 +13,8 @@ var app = new Vue({
         allItems: async function () {
             let response = await axi.get('items/')
             console.log('salam')
-            console.log(response.data['data']['results'])
-            this.results = response.data['data']['results']
+            console.log(response.data['data'])
+            this.results = response.data['data']
         },
 
         getCategories: async function () {
@@ -23,5 +23,10 @@ var app = new Vue({
             console.log(response.data['data'])
             this.categories = response.data['data']
         },
+
+        filter: async function (id) {
+            let response = await axi.get('items/?subcategory=' + id.toString())
+            this.results = response.data['data']
+        }
     }
 })

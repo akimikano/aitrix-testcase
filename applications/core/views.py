@@ -15,9 +15,9 @@ class SubcategoryView(ModelViewSet):
 
 
 class ItemView(ModelViewSet):
-    queryset = Item.objects.all()
+    queryset = Item.objects.all().order_by('-id')
     serializer_class = ItemSerializer
     filterset_fields = ('subcategory',)
-    pagination_class = MainPagination
+    # pagination_class = MainPagination
 
 
