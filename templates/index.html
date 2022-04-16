@@ -37,6 +37,14 @@
                             </div>
                         </div>
 
+                        <div class="dropdown">
+                            <li class="nav__item"><a href="#" class="nav__link">Sort Items</a></li>
+                            <div class="dropdown-content">
+                              <a @click="order('price')" href="#">Increasing price</a>
+                              <a @click="order('-price')" href="#">Decreasing price</a>
+                            </div>
+                        </div>
+
                         <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
                     </ul>
                 </div>
@@ -46,19 +54,6 @@
                 </div>
             </nav>
         </header>
-            <!--========== HOME ==========-->
-<!--            <section class="home" id="home">-->
-<!--                <div class="home__container bd-container bd-grid">-->
-<!--                    <div class="home__data">-->
-<!--                        <h1 class="home__title">Tasty food</h1>-->
-<!--                        <h2 class="home__subtitle">Try the best food of <br> the week.</h2>-->
-<!--                        <a href="#" class="button">View Menu</a>-->
-<!--                    </div>-->
-<!--    -->
-<!--                    <img src="assets/img/home.png" alt="" class="home__img">-->
-<!--                </div>-->
-<!--            </section>-->
-
 
             <!--========== MENU ==========-->
             <section class="menu section bd-container" id="menu">
@@ -73,22 +68,6 @@
                         <span class="menu__preci">[[ item.price ]] som</span>
                         <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                     </div>
-
-<!--                    <div class="menu__content">-->
-<!--                        <img src="assets/img/plate2.png" alt="" class="menu__img">-->
-<!--                        <h3 class="menu__name">Salad with fish</h3>-->
-<!--                        <span class="menu__detail">Delicious dish</span>-->
-<!--                        <span class="menu__preci">$12.00</span>-->
-<!--                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>-->
-<!--                    </div>-->
-<!--                    -->
-<!--                    <div class="menu__content">-->
-<!--                        <img src="assets/img/plate3.png" alt="" class="menu__img">-->
-<!--                        <h3 class="menu__name">Spinach salad</h3>-->
-<!--                        <span class="menu__detail">Delicious dish</span>-->
-<!--                        <span class="menu__preci">$9.50</span>-->
-<!--                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>-->
-<!--                    </div>-->
 
                 </div>
             </section>

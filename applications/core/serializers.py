@@ -3,6 +3,7 @@ from rest_framework.serializers import ModelSerializer
 from applications.core.models import Category, Subcategory, Item
 
 
+
 class SubcategorySerializer(ModelSerializer):
     category_name = serializers.CharField(source='category.name')
 

@@ -27,6 +27,19 @@ var app = new Vue({
         filter: async function (id) {
             let response = await axi.get('items/?subcategory=' + id.toString())
             this.results = response.data['data']
-        }
+        },
+
+        order: async function (ordering_type) {
+            let par = window.location.search;
+            let sign = '';
+            if (par.len > 0) {
+                sign = '&';
+            } else {
+                sign = '?';
+            }
+
+            let response = await axi.get('items/' + window.location.search + sign + 'ordering=' + ordering_type)
+            this.results = response.data['data']
+        },
     }
 })
